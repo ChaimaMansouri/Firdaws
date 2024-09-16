@@ -1,0 +1,20 @@
+{
+  "name": "quran",
+  "version": "1.0.0",
+  "main": "script.js",
+  
+  "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon --ext *"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "nodemon": "^3.1.4"
+  },
+  "description": ""
+}
