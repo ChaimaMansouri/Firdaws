@@ -34,7 +34,7 @@ async function getMoshafa(reciterId){
     
     chooseMoshafa.addEventListener('change', (e) => {
        const selectMoshaf=chooseMoshafa.options[chooseMoshafa.selectedIndex];
-       console.log(selectMoshaf);
+
 
        const surah_Server=selectMoshaf.dataset.server;
        const surah_List=selectMoshaf.dataset.liste_sowar;
@@ -59,7 +59,6 @@ async function getSourah(Server,surah_List){
        
         sourah_Name.forEach(sourah => {
             if(sourah.id==sourah_id){
-                console.log(sourah.name);
                 chooseSourah.innerHTML += `<option value="${Server}${padsurah}.mp3">${sourah.name}</option>`;
             }
         });
@@ -78,19 +77,29 @@ function getplay(url){
     audio.play();
 }
 
-function playlive(channal){
-    if(Hls.isSupported())
-{   
-  var video=document.getElementById('video');
-  var hls=new Hls();
-  hls.loadSource(channal);
-  hls.attachMedia(video);
-  hls.on(Hls.Events.MANIFEST_PARSED,function()
-  {
-    video.play();
-  });
+function playlive(channal) {
+    var video = document.getElementById('video');
+    
+    if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(channal);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+            video.play();
+        });
+
+        // Error handling in case the stream URL is not available
+        hls.on(Hls.Events.ERROR, function (event, data) {
+            if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+                console.error("Network error: could not load playlist. Check the URL or server status.");
+            }
+        });
+    } else {
+        console.error("HLS not supported in this browser.");
+    }
 }
-}
+
+
 
 
 
