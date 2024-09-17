@@ -8,11 +8,22 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 .custom-text{
     color: azure;
 }
 
 .global {
+    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -158,9 +169,7 @@ body {
     font-size: 50px;
     font-weight: 600;
 }
-.salat{
-  
-}
+
 .img2{
     padding-top: 40PX;
 
@@ -168,7 +177,6 @@ body {
 .information {
     margin-left: 90PX;
     width: 34%;
-    height: 85%;
     padding: 20px 20PX 30PX;
     background-color: rgba(0, 0, 0, 0.495);
     backdrop-filter: blur(10px);
@@ -183,7 +191,6 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgb(213, 213, 213);
-
 }
 .information .Top h1{
     font-size: 20px;
@@ -218,6 +225,7 @@ body {
 
 .information .Middle .inf1{
     width: 90%;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -411,14 +419,12 @@ body {
         margin-bottom: 20px;
     }
     .information {
-        margin-left: 15px;
-        width: 85%;
-
+        margin-left: 10px;
+        width: 95%;
+        height: 100%;
     }
+    
     .ayah-container {
-        margin-left: 600PX;
-        margin-top: -390PX;
-        margin-right: 60PX;
         display: none;
     }
     
@@ -465,4 +471,11 @@ body {
         object-fit: cover;
         margin-left: 0px;
     }
+
+    .information .Top .search select{
+        height: 30px;
+        width: 100px;
+       
+    }
+  
 }
