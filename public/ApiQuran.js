@@ -110,7 +110,7 @@ function playlive(channal) {
 const config = {
     countriesUrl: "https://api.countrystatecity.in/v1/countries",
     citiesUrl: "https://api.countrystatecity.in/v1/countries/[ciso]/cities",
-    apiKey: "ZU1UcWJvWkdndWN2NXQ5SXlFcTlZMVdiSExiZzZNMm1MeURuRFQ2ZA=="
+    apiKey: ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
 };
 
 
